@@ -9,7 +9,7 @@ ENV BIND_USER=bind \
     WEBMIN_INIT_SSL_ENABLED="" \
     TZ=""
 
-SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
+#SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 # hadolint ignore=DL3005,DL3008,DL3008 
 RUN apt-get update \
  && apt-get upgrade -y \
@@ -19,7 +19,7 @@ RUN apt-get update \
  && echo "deb https://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list \
  && rm -rf /var/lib/apt/lists/*
 
-SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
+#SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 # hadolint ignore=DL3005,DL3008,DL3008 
 RUN rm -rf /etc/apt/apt.conf.d/docker-gzip-indexes \
  && apt-get update \
